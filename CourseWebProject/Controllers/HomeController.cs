@@ -17,7 +17,8 @@ namespace CourseWebProject.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Projeto final do Curso C# OO Nélio Alves";
+            ViewData["Name"] = "Gariel Silva";
 
             return View();
         }

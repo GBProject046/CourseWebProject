@@ -15,5 +15,7 @@ namespace CourseWebProject.Data
         }
 
         public DbSet<CourseWebProject.Models.Department> Department { get; set; }
+        public DbSet<CourseWebProject.Models.Seller> Seller { get; set; }
+        public DbSet<CourseWebProject.Models.SalesRecord> SalesRecord { get; set; }
     }
 }

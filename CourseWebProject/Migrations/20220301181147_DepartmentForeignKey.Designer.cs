@@ -3,14 +3,16 @@ using System;
 using CourseWebProject.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CourseWebProject.Migrations
 {
     [DbContext(typeof(CourseWebProjectContext))]
-    partial class CourseWebProjectContextModelSnapshot : ModelSnapshot
+    [Migration("20220301181147_DepartmentForeignKey")]
+    partial class DepartmentForeignKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

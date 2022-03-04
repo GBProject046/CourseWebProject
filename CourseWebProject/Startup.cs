@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using CourseWebProject.Data;
 using CourseWebProject.Services;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 namespace CourseWebProject
 {
@@ -49,6 +51,16 @@ namespace CourseWebProject
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, SeedingService seedingService)
         {
+            var ptBR = new CultureInfo("pt-BR");
+            var localizationOption = new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture(ptBR),
+                SupportedCultures = new List<CultureInfo> { ptBR },
+                SupportedUICultures = new List<CultureInfo> { ptBR }
+            };
+
+            app.UseRequestLocalization(localizationOption);
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

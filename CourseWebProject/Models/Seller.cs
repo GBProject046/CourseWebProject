@@ -11,6 +11,8 @@ namespace CourseWebProject.Models
         //Seller = Vendedor
 
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "{0} Required")]
         public string Name { get; set; }
         public string Email { get; set; }
 
@@ -19,7 +21,7 @@ namespace CourseWebProject.Models
         public DateTime BirthDate { get; set; }
 
         [Display(Name = "Base Salary")]
-        [DisplayFormat (DataFormatString = "R$ {0:N}")]
+        [DisplayFormat (DataFormatString = "{0:N}")]
         public double BaseSalary { get; set; }
         public Department Department { get; set; }
         public int DepartmentId { get; set; }
